@@ -1,0 +1,94 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Bloque BEM: Vista de Detalle de Producto
+.ft-product-detail {
+  background-color: var(--ft-bg-primary);
+  color: var(--ft-text-primary);
+  width: 100%;
+
+  &__back-btn {
+    background: transparent;
+    border: none;
+    color: var(--ft-text-primary);
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    @include interactive-button(1.05, 1px, transparent, var(--ft-brand-color));
+  }
+
+  &__image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid var(--ft-border-subtle);
+    background-color: var(--ft-bg-surface);
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ft-text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  &__title {
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ft-text-primary);
+  }
+
+  &__price {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ft-brand-color-text);
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ft-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  &__feedback {
+    min-height: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ft-success);
+  }
+}

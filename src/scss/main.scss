@@ -1,0 +1,72 @@
+// =============================================================================
+// FLOWER TRICKS — Punto de Entrada Sass Modular
+// =============================================================================
+
+// 1. Núcleo Bootstrap 5 parametrizado con tokens de diseño
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: #76b5c5,
+  $dark: #1a1a1a,
+  $light: #fffdf9,
+  $body-bg: #fffdf9,
+  $body-color: #1a1a1a,
+  $font-family-sans-serif: (
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif,
+  )
+);
+
+// 2. Parciales abstractos propios
+@use 'abstracts/fonts';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// 3. Componentes modulares BEM
+@use 'components/botones';
+@use 'components/header';
+@use 'components/sidebar';
+@use 'components/hero';
+@use 'components/product-card';
+@use 'components/product-detail';
+@use 'components/cart';
+@use 'components/footer';
+@use 'components/auth';
+@use 'components/mobile-nav';
+
+// 4. Reglas globales de base (ubicadas después de Bootstrap para ganar por especificidad y orden)
+body {
+  background-color: var(--ft-bg-primary);
+  color: var(--ft-text-primary);
+  font-family: $font-family-sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  overflow-x: hidden;
+}
+
+.ft-main {
+  background-color: var(--ft-bg-primary);
+  color: var(--ft-text-primary);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+// 5. Indicador común de foco visible accesible (WCAG 2.4.7 / 1.4.11)
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--ft-focus);
+  outline-offset: 2px;
+}
+
+// 6. Adaptación de accesibilidad para movimiento reducido (WCAG 2.2.2 / 2.3.3)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

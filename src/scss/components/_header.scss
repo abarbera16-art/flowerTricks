@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Bloque BEM: Header
+.ft-header {
+  min-height: 76px;
+  background-color: var(--ft-bg-primary);
+  transition: border-bottom-color 0.25s ease;
+
+  &--bordered {
+    border-bottom: 1.5px solid var(--ft-divider-line);
+  }
+
+  &__logo {
+    font-family: $ft-font-logo;
+    font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+    font-weight: normal; // Métrica natural de la fuente Lostar sin negrita artificial
+    color: var(--ft-brand-color-text);
+    letter-spacing: 0.08em;
+    word-spacing: 0.45rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px var(--ft-brand-shadow);
+    background: transparent;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.375rem;
+    line-height: 1.1;
+    @include interactive-button(1.04, 1px, transparent, var(--ft-brand-color));
+  }
+
+  &__badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    background-color: var(--ft-brand-color);
+    color: var(--ft-on-brand);
+    min-width: 1.25rem;
+    line-height: 1;
+    padding: 0.25em 0.4em;
+  }
+}

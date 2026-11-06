@@ -1,0 +1,255 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Bloque BEM: Footer Global inspirado en Pull&Bear
+.ft-footer {
+  background-color: var(--ft-bg-primary);
+  color: var(--ft-text-primary);
+  border-top: 1px solid var(--ft-border-subtle);
+  padding: 3rem 1.5rem 1.5rem;
+  font-family: $font-family-sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+
+  @media (min-width: 768px) {
+    padding: 4rem 3rem 2rem;
+  }
+
+  &__brand {
+    font-family: $ft-font-logo;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--ft-brand-color-text);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  // Bloque Newsletter Superior
+  &__newsletter {
+    max-width: 540px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  &__newsletter-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--ft-text-primary);
+  }
+
+  &__newsletter-text {
+    font-size: 0.8rem;
+    color: var(--ft-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  &__newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+  }
+
+  &__newsletter-input {
+    border: none;
+    border-bottom: 1.5px solid var(--ft-border-color);
+    background: transparent;
+    color: var(--ft-text-primary);
+    caret-color: var(--ft-text-primary);
+    font-size: 0.85rem;
+    padding: 0.4rem 0.25rem;
+    flex: 1 1 240px;
+    border-radius: 0;
+
+    &::placeholder {
+      color: var(--ft-text-muted);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ft-focus);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  &__newsletter-feedback {
+    min-height: 1.25rem;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+
+    &--success {
+      color: var(--ft-success);
+      font-weight: 500;
+    }
+
+    &--error {
+      color: var(--ft-error);
+      font-weight: 500;
+    }
+  }
+
+  // Columnas de Enlaces (Grid Pull&Bear)
+  &__nav-grid {
+    margin-bottom: 2.5rem;
+  }
+
+  &__col {
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 767.98px) {
+      border-bottom: 1px solid var(--ft-border-subtle);
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__col-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+    color: var(--ft-text-primary);
+
+    @media (max-width: 767.98px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__accordion-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.65rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ft-text-primary);
+    cursor: pointer;
+    @include interactive-button(1.02, 1px, transparent, var(--ft-brand-color));
+  }
+
+  &__accordion-icon {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+
+    @media (max-width: 767.98px) {
+      padding: 0.5rem 0 0.85rem;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 0.78rem;
+    color: var(--ft-text-muted);
+    text-decoration: none;
+    display: inline-block; // Permite la transformación física de escala
+    @include interactive-button(1.04, 1px, transparent, var(--ft-brand-color));
+
+    &:hover,
+    &:focus-visible {
+      color: var(--ft-text-primary);
+      text-decoration: underline;
+    }
+  }
+
+  &__payment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    background-color: var(--ft-bg-input);
+    color: var(--ft-text-primary);
+    border-radius: 0.25rem;
+    border: 1px solid var(--ft-border-subtle);
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 0.25rem;
+  }
+
+  &__social-btn {
+    color: var(--ft-text-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--ft-border-subtle);
+    background: transparent;
+    @include interactive-button(
+      1.15,
+      1px,
+      var(--ft-border-subtle),
+      var(--ft-brand-color)
+    );
+
+    &:hover,
+    &:focus-visible {
+      color: var(--ft-brand-color-text);
+      border-color: var(--ft-brand-color);
+    }
+  }
+
+  // Bloque Legal Inferior
+  &__bottom {
+    border-top: 1px solid var(--ft-border-subtle);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.72rem;
+    color: var(--ft-text-muted);
+
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__legal-nav {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+}

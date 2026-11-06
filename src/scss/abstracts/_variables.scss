@@ -1,0 +1,72 @@
+// =============================================================================
+// FLOWER TRICKS — Variables y Tokens de Diseño
+// =============================================================================
+
+// Tokens Sass de FLOWER TRICKS
+$ft-terracotta: #d48c84;
+$ft-terracotta-text: #a9594f; // Ratio 4.89:1 sobre fondo claro (#FFFDF9) para texto y enlaces
+$ft-terracotta-shadow: #b56e66;
+$ft-celeste: #76b5c5;
+$ft-celeste-hover: #5ca2b4;
+$ft-charcoal: #1a1a1a;
+$ft-cream: #fffdf9;
+$font-family-sans-serif:
+  'Inter',
+  system-ui,
+  -apple-system,
+  sans-serif;
+$ft-font-logo: 'Lostar', 'Playfair Display', Georgia, serif;
+$border-radius-pill: 50rem;
+
+// Sobrescrituras compatibles con Bootstrap 5
+$primary: #76b5c5;
+$dark: #1a1a1a;
+$light: #fffdf9;
+$body-bg: #fffdf9;
+$body-color: #1a1a1a;
+
+// Tokens CSS reactivos para Modo Claro y Modo Oscuro
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --ft-bg-primary: #{$ft-cream};
+  --ft-bg-surface: #ffffff;
+  --ft-bg-input: #dcdcdc;
+  --ft-text-primary: #{$ft-charcoal};
+  --ft-text-muted: #555555;
+  --ft-brand-color: #{$ft-terracotta};
+  --ft-brand-color-text: #{$ft-terracotta-text};
+  --ft-brand-shadow: #{$ft-terracotta-shadow};
+  --ft-accent-color: #{$ft-celeste};
+  --ft-accent-hover: #{$ft-celeste-hover};
+  --ft-on-accent: #1a1a1a; // Contraste 7.61:1 sobre #76B5C5 (WCAG AAA)
+  --ft-on-brand: #1a1a1a; // Contraste 6.53:1 sobre #D48C84 (WCAG AA)
+  --ft-border-color: #{$ft-charcoal};
+  --ft-border-subtle: rgba(26, 26, 26, 0.25);
+  --ft-divider-line: rgba(26, 26, 26, 0.45);
+  --ft-focus: #287487; // Contraste ≥ 4.5:1 sobre fondo claro
+  --ft-success: #1e6f40;
+  --ft-error: #b02a37;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ft-bg-primary: #18181a;
+  --ft-bg-surface: #242428;
+  --ft-bg-input: #323238;
+  --ft-text-primary: #f5f3ef;
+  --ft-text-muted: #b0b0b8;
+  --ft-brand-color: #e29d96;
+  --ft-brand-color-text: #e29d96; // Contraste 7.1:1 sobre #18181A
+  --ft-brand-shadow: #7a433d;
+  --ft-accent-color: #63a8b9;
+  --ft-accent-hover: #76b5c5;
+  --ft-on-accent: #1a1a1a; // Contraste 6.5:1 sobre #63A8B9
+  --ft-on-brand: #1a1a1a; // Contraste 7.5:1 sobre #E29D96
+  --ft-border-color: #f5f3ef;
+  --ft-border-subtle: rgba(245, 243, 239, 0.25);
+  --ft-divider-line: rgba(245, 243, 239, 0.35);
+  --ft-focus: #8fd5e5; // Contraste ≥ 4.5:1 sobre fondo oscuro
+  --ft-success: #4ade80;
+  --ft-error: #f87171;
+}

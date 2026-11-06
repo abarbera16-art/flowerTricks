@@ -1,0 +1,147 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Botones de iconos del Header, Sidebar y Tarjetas
+.ft-btn-icon {
+  background: transparent;
+  color: var(--ft-text-primary);
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  @include interactive-button(1.12, 1.5px, transparent, var(--ft-brand-color));
+
+  &--sm {
+    padding: 0.2rem;
+    min-width: 26px;
+    min-height: 26px;
+    border-radius: 0.25rem;
+  }
+
+  &--active {
+    color: var(--ft-brand-color-text);
+  }
+}
+
+// Botones píldora CTA ("Wishlist", "Comprar", "Añadir a la cesta", "Suscribirme", "Aplicar")
+.ft-btn-cta {
+  background-color: var(--ft-accent-color);
+  color: var(--ft-on-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 1.1rem;
+  border-radius: $border-radius-pill;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  @include interactive-button(1.08, 1.5px, transparent, var(--ft-border-color));
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--ft-accent-hover);
+    color: var(--ft-on-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: var(--ft-text-primary);
+    border-color: var(--ft-border-subtle);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--ft-bg-input);
+      color: var(--ft-text-primary);
+      border-color: var(--ft-border-color);
+    }
+  }
+
+  &--full {
+    width: 100%;
+    padding: 0.45rem 1rem;
+  }
+}
+
+// Flechas laterales circulares del Carrusel (28px x 28px)
+.ft-btn-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--ft-bg-surface);
+  color: var(--ft-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 10;
+  @include vertical-center;
+  @include interactive-button(1.18, 1px, var(--ft-border-color), var(--ft-brand-color));
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-50%) scale(1.18);
+    border-width: 2px;
+  }
+
+  // Corrección crítica: evita perder translateY(-50%) al pulsar
+  &:active {
+    transform: translateY(-50%) scale(0.97);
+  }
+
+  &--prev {
+    left: 16px;
+  }
+
+  &--next {
+    right: 16px;
+  }
+}
+
+// Indicadores circulares inferiores del carrusel (Pagination Dots)
+.ft-btn-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.25);
+    background-color: #ffffff;
+  }
+
+  &--active {
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+    border-color: var(--ft-accent-color);
+  }
+}
+
+// Pestañas de navegación en vista Cesta / Wishlist / Auth
+.ft-btn-tab {
+  background: transparent;
+  color: var(--ft-text-primary);
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  @include interactive-button(1.06, 1px, transparent, var(--ft-brand-color));
+
+  &--active {
+    border-bottom: 2px solid var(--ft-text-primary);
+    border-radius: 0;
+    font-weight: 600;
+  }
+}
