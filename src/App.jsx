@@ -8,6 +8,7 @@ import CartView from './components/CartView';
 import Footer from './components/Footer';
 import MobileBottomNav from './components/MobileBottomNav';
 import { mountVanillaAuth } from './vanilla/authVanilla';
+import { preloadSounds, playSound } from './utils/soundEffects';
 import {
   PRODUCTS,
   TOP_SALES_PRODUCTS,
@@ -70,6 +71,11 @@ export default function App() {
     }
     return INITIAL_CART_ITEMS;
   });
+
+  // Precarga inicial de efectos de sonido
+  useEffect(() => {
+    preloadSounds();
+  }, []);
 
   // 3. Sincronización de tema (data-theme y data-bs-theme)
   useEffect(() => {
@@ -141,8 +147,20 @@ export default function App() {
     return destroy;
   }, [currentView, handleAuthSuccess]);
 
-  // 6. Manejadores de acciones de catálogo y compras
+  // 6. Manejadores de acciones de catálogo, compras y tema
+  const handleToggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    if (nextTheme === 'dark') {
+      playSound('darkMode');
+    }
+    setTheme(nextTheme);
+  };
+
   const handleToggleWishlist = (productId) => {
+    const isAdding = !wishlistIds.includes(productId);
+    if (isAdding) {
+      playSound('favorite');
+    }
     setWishlistIds((prev) =>
       prev.includes(productId)
         ? prev.filter((id) => id !== productId)
@@ -151,6 +169,7 @@ export default function App() {
   };
 
   const handleAddToCart = (productId) => {
+    playSound('addCart');
     setCartItems((prev) => {
       const existing = prev.find((item) => item.productId === productId);
       if (existing) {
@@ -163,6 +182,10 @@ export default function App() {
   };
 
   const handleUpdateQuantity = (productId, delta) => {
+    const currentItem = cartItems.find((item) => item.productId === productId);
+    if (currentItem && currentItem.quantity + delta <= 0) {
+      playSound('removeCart');
+    }
     setCartItems((prev) => {
       const existing = prev.find((item) => item.productId === productId);
       if (!existing) return prev;
@@ -177,6 +200,7 @@ export default function App() {
   };
 
   const handleRemoveCartItem = (productId) => {
+    playSound('removeCart');
     setCartItems((prev) => prev.filter((item) => item.productId !== productId));
   };
 
@@ -263,7 +287,7 @@ export default function App() {
         onNavigateAuth={() => setCurrentView('auth')}
         currentView={currentView}
         theme={theme}
-        onToggleTheme={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+        onToggleTheme={handleToggleTheme}
         cartCount={totalCartUnits}
         user={user}
       />
@@ -413,7 +437,7 @@ export default function App() {
           setCurrentView('home');
           handleClearFilters();
         }}
-        onToggleTheme={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+        onToggleTheme={handleToggleTheme}
         onNavigateCart={() => setCurrentView('cart')}
         onNavigateAuth={() => setCurrentView('auth')}
         theme={theme}

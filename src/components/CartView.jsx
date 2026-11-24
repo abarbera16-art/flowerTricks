@@ -395,8 +395,8 @@ export default function CartView({
         aria-label="Promoción especial de temporada"
       >
         <img
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80"
-          alt="Fondo de rosas rojas para promoción de rebajas"
+          src="/media/img/rosas-carmesi-lluvia.jpg"
+          alt="Fondo de rosas carmesí y rosadas con gotas de rocío para promoción de rebajas"
           className="ft-cart__banner-img"
           loading="lazy"
         />

@@ -7,6 +7,7 @@ export default function HeroCarousel({ wishlistIds = [], onAddWishlist, onBuyNow
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const isHoveredRef = useRef(false);
+  const heroVideoRef = useRef(null);
 
   // Detección de preferencia de movimiento reducido (WCAG 2.2.2)
   useEffect(() => {
@@ -18,6 +19,21 @@ export default function HeroCarousel({ wishlistIds = [], onAddWishlist, onBuyNow
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
+  // Sincronización del vídeo del banner central con pausa o movimiento reducido
+  useEffect(() => {
+    const videoEl = heroVideoRef.current;
+    if (!videoEl) return;
+
+    if (prefersReducedMotion || isPaused || activeIndex !== 1) {
+      videoEl.pause();
+    } else {
+      const playPromise = videoEl.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    }
+  }, [activeIndex, isPaused, prefersReducedMotion]);
 
   // Autoavance cada 4500 ms con pausa en interacción o movimiento reducido
   useEffect(() => {
@@ -81,12 +97,27 @@ export default function HeroCarousel({ wishlistIds = [], onAddWishlist, onBuyNow
               aria-hidden={!isActive}
               aria-label={`Diapositiva ${index + 1} de ${HERO_SLIDES.length}`}
             >
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="ft-hero__image"
-                loading={index === 1 ? 'eager' : 'lazy'}
-              />
+              {slide.video ? (
+                <video
+                  ref={heroVideoRef}
+                  src={slide.video}
+                  poster={slide.image}
+                  className="ft-hero__image ft-hero__video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={slide.alt || slide.title}
+                />
+              ) : (
+                <img
+                  src={slide.image}
+                  alt={slide.alt || slide.title}
+                  className="ft-hero__image"
+                  loading={index === 1 ? 'eager' : 'lazy'}
+                />
+              )}
 
               <div className="ft-hero__caption">
                 <h2 className="ft-hero__title">{slide.title}</h2>
