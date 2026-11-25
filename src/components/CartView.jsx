@@ -395,7 +395,7 @@ export default function CartView({
         aria-label="Promoción especial de temporada"
       >
         <img
-          src="/media/img/rosas-carmesi-lluvia.jpg"
+          src="/media/img/rosas-carmesi-lluvia.webp"
           alt="Fondo de rosas carmesí y rosadas con gotas de rocío para promoción de rebajas"
           className="ft-cart__banner-img"
           loading="lazy"

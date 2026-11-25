@@ -8,7 +8,7 @@ const PRODUCT_TOP_PREVIEW = {
   id: 'top-preview',
   name: 'Ramo de Autor Mostaza',
   price: 28.5,
-  image: '/media/img/peonies-autor.jpg',
+  image: '/media/img/peonies-autor.webp',
   alt: 'Ramo artesanal de peonías y rosas en tonos marfil y rosa empolvado',
   description:
     'Exclusiva composición de autor con peonías, eucalipto y paniculata silvestre, envuelta en papel artesanal de tono mostaza.',
@@ -19,7 +19,7 @@ const PRODUCT_TOP_1 = {
   id: 'top-1',
   name: 'Ramo Silvestre Primaveral',
   price: 19.99,
-  image: '/media/img/lirios-blancos.jpg',
+  image: '/media/img/lirios-blancos.webp',
   alt: 'Ramo de lirios blancos frescos atados con cuerda natural sobre madera cálida',
   description:
     'Bouquet fresco con lirios blancos, paniculata y rosas pastel, ideal para iluminar estancias y transmitir armonía natural.',
@@ -30,7 +30,7 @@ const PRODUCT_TOP_2 = {
   id: 'top-2',
   name: 'Ramo de Girasoles Silvestres',
   price: 19.99,
-  image: '/media/img/girasol-campo.jpg',
+  image: '/media/img/girasol-campo.webp',
   alt: 'Girasol amarillo en plena floración rodeado de hojas verdes en el campo',
   description:
     'Girasoles naturales de cultivo sostenible con follaje rústico, llenos de luz y vitalidad para regalar optimismo.',
@@ -41,7 +41,7 @@ const PRODUCT_TOP_3 = {
   id: 'top-3',
   name: 'Ramo de Tulipanes Escarlata',
   price: 19.99,
-  image: '/media/img/tulipanes-rojos.jpg',
+  image: '/media/img/tulipanes-rojos.webp',
   alt: 'Campo luminoso de tulipanes rojos con bordes dorados bajo luz natural',
   description:
     'Tulipanes rojos holandeses de primera calidad con tallo esbelto, símbolo tradicional de elegancia, pureza y afecto.',
@@ -52,7 +52,7 @@ const PRODUCT_TOP_4 = {
   id: 'top-4',
   name: 'Ramo Variado de Ensueño',
   price: 19.99,
-  image: '/media/img/centro-botanico-jarron.jpg',
+  image: '/media/img/centro-botanico-jarron.webp',
   alt: 'Arreglo floral de flores secas y hierbas de la pampa en jarrón blanco acanalado',
   description:
     'Combinación primaveral de margaritas, rosas mini y follaje aromático, preparada con envoltorio eco-responsable.',
@@ -64,7 +64,7 @@ const PRODUCT_CART_1 = {
   id: 'cart-1',
   name: 'Ramo tulipanes mixto',
   price: 19.99,
-  image: '/media/img/tulipanes-rojos.jpg',
+  image: '/media/img/tulipanes-rojos.webp',
   alt: 'Tulipanes rojos frescos con matices dorados en floración primaveral',
   description:
     'Surtido multicolor de tulipanes frescos de temporada recogidos a mano en su punto óptimo de apertura.',
@@ -75,7 +75,7 @@ const PRODUCT_CART_2 = {
   id: 'cart-2',
   name: 'Ramo Boda mediano',
   price: 50.99, // Precio unitario estipulado en la rúbrica (subtotal 2 uds = 101,98 €)
-  image: '/media/img/ramo-boda-blanco.jpg',
+  image: '/media/img/ramo-boda-blanco.webp',
   alt: 'Ramo de boda compuesto de rosas blancas y hojas verdes brillantes sobre madera',
   description:
     'Composición nupcial artesanal de tamaño mediano con peonías marfil, rosas y hojas de olivo mediterráneo.',
@@ -86,7 +86,7 @@ const PRODUCT_CART_3 = {
   id: 'cart-3',
   name: 'Ramo rosas clásico',
   price: 22.99,
-  image: '/media/img/rosas-carmesi-lluvia.jpg',
+  image: '/media/img/rosas-carmesi-lluvia.webp',
   alt: 'Ramo de rosas rojas y rosadas cubiertas de gotas de rocío sobre fondo oscuro',
   description:
     'Rosas de tallo largo y terciopelo rojo intenso acompañadas de verde eucalipto fresco.',
@@ -97,7 +97,7 @@ const PRODUCT_HERO_1 = {
   id: 'hero-1',
   name: 'Peonía imperial',
   price: 34.99,
-  image: '/media/img/peonies-autor.jpg',
+  image: '/media/img/peonies-autor.webp',
   alt: 'Peonías y rosas en tonos crema y rosa pastel para centros de mesa',
   description:
     'Peonías imperiales de flor grande y perfume sutil, seleccionadas para eventos de alta distinción.',
@@ -108,7 +108,7 @@ const PRODUCT_HERO_2 = {
   id: 'hero-2',
   name: 'Rosa centifolia',
   price: 29.99,
-  image: '/media/img/rosas-carmesi-lluvia.jpg',
+  image: '/media/img/rosas-carmesi-lluvia.webp',
   alt: 'Rosas carmesí y rosa antiguo con gotas de agua sobre fondo verde oscuro',
   description:
     'Rosas centifolia de fragancia persistente y porte romántico, muy solicitadas para estilismos nupciales.',
@@ -119,7 +119,7 @@ const PRODUCT_HERO_3 = {
   id: 'hero-3',
   name: 'Dalia silvestre',
   price: 26.5,
-  image: '/media/img/dalia-silvestre.jpg',
+  image: '/media/img/dalia-silvestre.webp',
   alt: 'Dalia silvestre de pétalos amarillo cálido con centro granate y follaje oscuro',
   description:
     'Dalias de tonos terracota y ámbar que aportan calidez y sofisticación a cualquier rincón del hogar.',
@@ -131,7 +131,7 @@ const PRODUCT_FEAT_ARTIFICIALES = {
   id: 'feat-artificiales',
   name: 'Centro Botánico Pampa Silk',
   price: 32.0,
-  image: '/media/img/centro-botanico-jarron.jpg',
+  image: '/media/img/centro-botanico-jarron.webp',
   alt: 'Centro botánico perenne de espigas y flores secas en jarrón cerámico blanco sobre lino',
   description:
     'Flores y ramas artificiales de tacto realista y máxima durabilidad, sin necesidad de mantenimiento ni agua.',
@@ -142,7 +142,7 @@ const PRODUCT_FEAT_CONDOLENCIAS = {
   id: 'feat-condolencias',
   name: 'Corona Blanca de Serenidad',
   price: 45.0,
-  image: '/media/img/lirios-blancos.jpg',
+  image: '/media/img/lirios-blancos.webp',
   alt: 'Ramo sereno de lirios blancos naturales dispuesto sobre superficie de madera',
   description:
     'Diseño sobrio y respetuoso en lirios blancos, paniculata y gladiolos para transmitir cariño y recuerdo.',
@@ -153,7 +153,7 @@ const PRODUCT_FEAT_CUMPLEANOS = {
   id: 'feat-cumpleanos',
   name: 'Bouquet Fiesta Color',
   price: 25.5,
-  image: '/media/img/girasol-campo.jpg',
+  image: '/media/img/girasol-campo.webp',
   alt: 'Girasol amarillo brillante en floración rodeado de verde follaje',
   description:
     'Explosión de colores vivos con gerberas, girasoles y claveles frescos para felicitar en aniversarios natales.',
@@ -164,7 +164,7 @@ const PRODUCT_FEAT_SECAS = {
   id: 'feat-secas',
   name: 'Manojo de Lavanda y Trigo',
   price: 18.0,
-  image: '/media/img/dalia-silvestre.jpg',
+  image: '/media/img/dalia-silvestre.webp',
   alt: 'Dalia silvestre dorada de estación con hojas oscuras sobre fondo natural',
   description:
     'Flores secas preservadas con aroma calmante natural, perfectas para decoración boho-chic perdurable.',
@@ -274,7 +274,7 @@ export const HERO_SLIDES = [
     productId: 'hero-1',
     title: 'Peonía imperial',
     subtitle: 'Fragancia delicada para centros de mesa',
-    image: '/media/img/peonies-autor.jpg',
+    image: '/media/img/peonies-autor.webp',
     alt: 'Peonías y rosas en tonos marfil y rosa empolvado para centros de mesa',
   },
   {
@@ -282,7 +282,7 @@ export const HERO_SLIDES = [
     productId: 'hero-2',
     title: 'Rosa centifolia',
     subtitle: 'Especialmente popular en tocados de novia',
-    image: '/media/img/rosas-carmesi-lluvia.jpg',
+    image: '/media/img/rosas-carmesi-lluvia.webp',
     video: '/media/video/rosas-eucalipto-hero.mp4',
     alt: 'Rosas de jardín en tonos crema y rosado con hojas de eucalipto',
   },
@@ -291,7 +291,7 @@ export const HERO_SLIDES = [
     productId: 'hero-3',
     title: 'Dalia silvestre',
     subtitle: 'Tonos cálidos de temporada para eventos',
-    image: '/media/img/dalia-silvestre.jpg',
+    image: '/media/img/dalia-silvestre.webp',
     alt: 'Dalia silvestre amarilla con centro oscuro y follaje bronce',
   },
 ];
